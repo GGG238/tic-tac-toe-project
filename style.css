@@ -7,6 +7,48 @@
     src: url(./font/Fredoka_One/FredokaOne-Regular.ttf);
 }
 
+/*---------- Menu ----------*/
+
+#menu{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+
+#players-menu{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.player{
+    height: 35vw;
+    
+}
+
+/*---------- Players ----------*/
+
+#players{
+    background-color: brown;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#player-one{
+    background-color: aqua;
+}
+
+#player-two{
+    background-color: aqua;
+}
+
+/*---------- Gameboard ----------*/
+
 #gameboard{
     width: min(600px, 90vmin);
     height: min(600px, 90vmin);
@@ -20,7 +62,7 @@
 }
 
 #gameboard > div{
-    font-size: 5rem;
+    font-size: min(6rem, 20vmin);
     display: grid;
     align-content: center;
     justify-content: center;
@@ -33,3 +75,4 @@
 #gameboard div:nth-last-child(n+4){
     border-bottom: 0.25rem solid black;
 }
+
