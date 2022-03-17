@@ -10,7 +10,10 @@
 /*---------- Menu ----------*/
 
 #menu{
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     position: absolute;
     left: 0;
     top: 0;
@@ -22,12 +25,59 @@
 #players-menu{
     display: flex;
     flex-direction: row;
-
+    gap: 3rem;
 }
 
 .player{
-    height: 35vw;
-    
+    height: max(40vh, 350px);
+    width: min(40vw, 400px);
+    border-radius: 1rem;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+}
+
+.select-name{
+    display: flex;
+    position: relative;
+}
+
+.select-name svg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.player input[type=text]{
+    font-size: 2rem;
+    border-radius: 1rem;
+    width: 100%;
+    cursor: default;
+}
+
+.select-icon{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+.show-icons{
+    height: min(30vw, 250px);
+    width: min(30vw, 250px);
+    border-radius: 50%;
+    border: 0.5rem solid black;
+}
+
+#menu > button{
+    height: 6rem;
+    width: 15rem;
+    border-radius: 1rem;
+    background-color: blue;
+    font-size: 3.5rem;
+    border: 0.5rem solid black;
+    cursor: pointer;
 }
 
 /*---------- Players ----------*/
