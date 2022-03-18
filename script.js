@@ -27,10 +27,15 @@ const displayController = (() => {
     const game = [,,,,,,,,,];
     let currentSymbol = "X";
     let symbolsCounter = 0;
+    let winner = false;
+    const divResult = document.getElementById("result");
+    const counterX = document.getElementById("mark-x");
+    const counterO = document.getElementById("mark-o");
 
     const displaySymbol = (square) => {
         let num = square.dataset.num;
         if(game[num]) return;
+        if(winner) return;
 
         game[num] = currentSymbol;
         square.textContent = currentSymbol;
@@ -45,7 +50,7 @@ const displayController = (() => {
     const checkWinner = () => {
         const arrX = [];
         const arrO = [];
-
+        
         for(let i=0 ; i<game.length ; i++){
             if(!game[i]) continue;
             if(game[i]==="X"){
@@ -61,11 +66,11 @@ const displayController = (() => {
         let strO = arrO.join("");
 
         if(regex.test(strX)){
-            console.log("X won!");
+            counterX.textContent++;
+            winner = true;
         }else if(regex.test(strO)){
-            console.log("O won!");
-        }else{
-            console.log("nope")
+            counterO.textContent++;
+            winner = true;
         }
         //console.log(strO,strX,regex);
     }
@@ -80,9 +85,7 @@ const displayController = (() => {
 
 
 const player = (name, icon) => {
-    const changeIcon = () => {
-        
-    };
+    
 };
 
 
@@ -98,7 +101,7 @@ function disp(){
 
 
 
-
+/*
 const icons = ['<svg style="width:6rem;height:6rem" viewBox="0 0 24 24"><path fill="currentColor" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg>',
                 '<svg style="width:6rem;height:6rem" viewBox="0 0 24 24"><path fill="currentColor" d="M20 22H4V20C4 17.8 7.6 16 12 16S20 17.8 20 20M8 9H16V10C16 12.2 14.2 14 12 14S8 12.2 8 10M19 4C18.4 4 18 4.4 18 5V6H16.5L15.1 3C15 2.8 14.9 2.6 14.7 2.5C14.2 2 13.4 1.9 12.7 2.2L12 2.4L11.3 2.1C10.6 1.8 9.8 1.9 9.3 2.4C9.1 2.6 9 2.8 8.9 3L7.5 6H6V5C6 4.4 5.6 4 5 4S4 4.4 4 5V6C4 7.1 4.9 8 6 8H18C19.1 8 20 7.1 20 6V5C20 4.5 19.6 4 19 4Z" /></svg>',
                 '<svg style="width:6rem;height:6rem" viewBox="0 0 24 24"><path fill="currentColor" d="M12,15C7.58,15 4,16.79 4,19V21H20V19C20,16.79 16.42,15 12,15M8,9A4,4 0 0,0 12,13A4,4 0 0,0 16,9M11.5,2C11.2,2 11,2.21 11,2.5V5.5H10V3C10,3 7.75,3.86 7.75,6.75C7.75,6.75 7,6.89 7,8H17C16.95,6.89 16.25,6.75 16.25,6.75C16.25,3.86 14,3 14,3V5.5H13V2.5C13,2.21 12.81,2 12.5,2H11.5Z" /></svg>',
@@ -113,6 +116,22 @@ const icons = ['<svg style="width:6rem;height:6rem" viewBox="0 0 24 24"><path fi
 
                 '<svg style="width:6rem;height:6rem" viewBox="0 0 24 24"><path fill="currentColor" d="M14,12H10V10H14M14,16H10V14H14M20,8H17.19C16.74,7.22 16.12,6.55 15.37,6.04L17,4.41L15.59,3L13.42,5.17C12.96,5.06 12.5,5 12,5C11.5,5 11.04,5.06 10.59,5.17L8.41,3L7,4.41L8.62,6.04C7.88,6.55 7.26,7.22 6.81,8H4V10H6.09C6.04,10.33 6,10.66 6,11V12H4V14H6V15C6,15.34 6.04,15.67 6.09,16H4V18H6.81C7.85,19.79 9.78,21 12,21C14.22,21 16.15,19.79 17.19,18H20V16H17.91C17.96,15.67 18,15.34 18,15V14H20V12H18V11C18,10.66 17.96,10.33 17.91,10H20V8Z" /></svg>'
             ];
+
+const playersIcon = document.querySelectorAll(".show-icons");
+
+playersIcon.forEach( div => {
+    div.addEventListener("click", insertIcon);
+});
+
+function insertIcon(){
+    this.innerHTML = icons[1];
+}
+
+
+
+
+
+
             
 const svg = document.querySelectorAll(".svg-name");
 svg.forEach( s => {
@@ -122,3 +141,4 @@ svg.forEach( s => {
 function doSomething(){
     alert("Ouch!");
 }
+*/

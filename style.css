@@ -7,10 +7,15 @@
     src: url(./font/Fredoka_One/FredokaOne-Regular.ttf);
 }
 
-/*---------- Menu ----------*/
+@font-face {
+    font-family: 'cool-font';
+    src: url(./font/Smokum/Smokum-Regular.ttf);
+}
 
+/*---------- Menu ----------*/
+/*
 #menu{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -79,29 +84,34 @@
     border: 0.5rem solid black;
     cursor: pointer;
 }
+*/
 
 /*---------- Players ----------*/
 
 #players{
-    background-color: brown;
+    width: min(500px, 100vw);
+    font-size: 4rem;
+    font-family: 'cool-font', Roboto;
+    margin: 2rem auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 #player-one{
-    background-color: aqua;
+    text-align: center;
 }
 
 #player-two{
-    background-color: aqua;
+    text-align: center;
 }
 
 /*---------- Gameboard ----------*/
 
 #gameboard{
-    width: min(600px, 90vmin);
-    height: min(600px, 90vmin);
+    width: min(500px, 90vmin);
+    height: min(500px, 90vmin);
     margin: auto;
     font-family: 'myFont', Roboto;
     cursor: default;
@@ -126,3 +136,38 @@
     border-bottom: 0.25rem solid black;
 }
 
+#again{
+    width: min(500px, 90vmin);
+    height: min(500px, 90vmin);
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    bottom: min(500px, 90vmin);
+}
+
+/*---------- Options ----------*/
+
+#options{
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+#options button{
+    font-size: 1.5rem;
+    width: 10rem;
+    padding: 0.5rem;
+    border: 0.2rem solid black;
+    border-radius: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+#options button:hover{
+    background-color: black;
+    color: white;
+}
