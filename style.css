@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-family: 'myFont';
 }
 
 @font-face{
@@ -7,9 +8,10 @@
     src: url(./font/Fredoka_One/FredokaOne-Regular.ttf);
 }
 
-@font-face {
-    font-family: 'cool-font';
-    src: url(./font/Smokum/Smokum-Regular.ttf);
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*---------- Menu ----------*/
@@ -89,9 +91,8 @@
 /*---------- Players ----------*/
 
 #players{
-    width: min(500px, 100vw);
-    font-size: 4rem;
-    font-family: 'cool-font', Roboto;
+    width: min(500px, 90vw);
+    font-size: min(3rem, 8vw);
     margin: 2rem auto;
     display: flex;
     flex-direction: row;
@@ -109,12 +110,18 @@
 
 /*---------- Gameboard ----------*/
 
+#game{
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
 #gameboard{
     width: min(500px, 90vmin);
     height: min(500px, 90vmin);
-    margin: auto;
-    font-family: 'myFont', Roboto;
     cursor: default;
+    grid-area: 1/1/2/2;
     background-color: antiquewhite;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -139,13 +146,16 @@
 #again{
     width: min(500px, 90vmin);
     height: min(500px, 90vmin);
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: none;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: auto;
-    position: relative;
-    bottom: min(500px, 90vmin);
+    font-size: min(3rem, 10vmin);
+    font-weight: bold;
+    cursor: pointer;
+    grid-area: 1/1/2/2;
 }
 
 /*---------- Options ----------*/
@@ -159,7 +169,7 @@
 
 #options button{
     font-size: 1.5rem;
-    width: 10rem;
+    width: min(16rem, 80vw);
     padding: 0.5rem;
     border: 0.2rem solid black;
     border-radius: 1rem;

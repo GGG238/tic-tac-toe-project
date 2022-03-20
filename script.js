@@ -31,6 +31,7 @@ const displayController = (() => {
     const divResult = document.getElementById("result");
     const counterX = document.getElementById("mark-x");
     const counterO = document.getElementById("mark-o");
+    const playAgain = document.getElementById("again");
 
     const displaySymbol = (square) => {
         let num = square.dataset.num;
@@ -68,9 +69,11 @@ const displayController = (() => {
         if(regex.test(strX)){
             counterX.textContent++;
             winner = true;
+            playAgain.style.display = "flex";
         }else if(regex.test(strO)){
             counterO.textContent++;
             winner = true;
+            playAgain.style.display = "flex";
         }
         //console.log(strO,strX,regex);
     }
