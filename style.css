@@ -8,104 +8,47 @@
     src: url(./font/Fredoka_One/FredokaOne-Regular.ttf);
 }
 
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #5cdb95;
+}
+
 #container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
-
-/*---------- Menu ----------*/
-/*
-#menu{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-}
-
-#players-menu{
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
-}
-
-.player{
-    height: max(40vh, 350px);
-    width: min(40vw, 400px);
-    border-radius: 1rem;
-    background-color: aqua;
-    display: flex;
-    flex-direction: column;
-}
-
-.select-name{
-    display: flex;
-    position: relative;
-}
-
-.select-name svg{
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-}
-
-.player input[type=text]{
-    font-size: 2rem;
-    border-radius: 1rem;
-    width: 100%;
-    cursor: default;
-}
-
-.select-icon{
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    align-items: center;
-}
-
-.show-icons{
-    height: min(30vw, 250px);
-    width: min(30vw, 250px);
-    border-radius: 50%;
-    border: 0.5rem solid black;
-}
-
-#menu > button{
-    height: 6rem;
-    width: 15rem;
-    border-radius: 1rem;
-    background-color: blue;
-    font-size: 3.5rem;
-    border: 0.5rem solid black;
-    cursor: pointer;
-}
-*/
 
 /*---------- Players ----------*/
 
+#players-container{
+    background-color: #05386b;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
 #players{
-    width: min(500px, 90vw);
+    width: min(600px, 90vw);
     font-size: min(3rem, 8vw);
-    margin: 2rem auto;
+    margin: 2rem auto 0.3rem auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    color: white;
+    background-color: #05386b;
 }
 
 #player-one{
     text-align: center;
+    background-color: #05386b;
 }
 
 #player-two{
     text-align: center;
+    background-color: #05386b;
 }
 
 /*---------- Gameboard ----------*/
@@ -122,7 +65,9 @@
     height: min(500px, 90vmin);
     cursor: default;
     grid-area: 1/1/2/2;
-    background-color: antiquewhite;
+    background-color: white;
+    border: 0.25rem solid #05386b;
+    border-radius: 10%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -156,6 +101,7 @@
     font-weight: bold;
     cursor: pointer;
     grid-area: 1/1/2/2;
+    border-radius: 10%;
 }
 
 /*---------- Options ----------*/
@@ -168,16 +114,16 @@
 }
 
 #options button{
-    font-size: 1.5rem;
+    font-size: min(1.5rem, 10vw);
     width: min(16rem, 80vw);
     padding: 0.5rem;
-    border: 0.2rem solid black;
+    border: 0.2rem solid #05386b;
     border-radius: 1rem;
     background-color: white;
     cursor: pointer;
 }
 
 #options button:hover{
-    background-color: black;
+    background-color: #05386b;
     color: white;
 }

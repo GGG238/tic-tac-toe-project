@@ -10,15 +10,27 @@
 </head>
 <body>
     <div id="container">
-        <div id="players">
-            <div id="player-one">
-                <div class="name">Player1</div>
-                <div id="mark-x">0</div>
-            </div>
-            <div>vs.</div>
-            <div id="player-two">
-                <div id="name">Player2</div>
-                <div id="mark-o">0</div>
+        <div id="players-container">
+            <div id="players">
+                <div id="player-one">
+                    <div class="name">
+                        <svg style="width:min(2.5rem, 8vw);height:min(2.5rem, 8vw)" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z" />
+                        </svg>
+                        Player1
+                    </div>
+                    <div id="mark-x">0</div>
+                </div>
+                <div>vs.</div>
+                <div id="player-two">
+                    <div id="name">
+                        <svg style="width: min(2.5rem, 8vw);height:min(2.5rem, 8vw)" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z" />
+                        </svg>
+                        Player2
+                    </div>
+                    <div id="mark-o">0</div>
+                </div>
             </div>
         </div>
         <div id="game">
@@ -31,50 +43,9 @@
             </div>
         </div>
         <div id="options">
-            <button type="button">Restart scores</button>
+            <button type="button" id="restart">Restart scores</button>
             <!-- <button type="button">Play again</button> -->
         </div>
     </div>
-    <!--
-    <div id="menu">
-        <div id="players-menu">
-            <div class="player">
-                <div class="select-name">
-                    <input type="text" value="Player one">
-                    <svg class="svg-name" style="width:3em;height:3em" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M5,3C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19H5V5H12V3H5M17.78,4C17.61,4 17.43,4.07 17.3,4.2L16.08,5.41L18.58,7.91L19.8,6.7C20.06,6.44 20.06,6 19.8,5.75L18.25,4.2C18.12,4.07 17.95,4 17.78,4M15.37,6.12L8,13.5V16H10.5L17.87,8.62L15.37,6.12Z" />
-                    </svg>
-                </div>
-                <div class="select-icon">
-                    <svg style="width:4rem;height:4rem" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-                    </svg>
-                    <div class="show-icons"></div>
-                    <svg style="width:4rem;height:4rem" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                    </svg>
-                </div>
-            </div>
-            <div class="player">
-                <div class="select-name">
-                    <input type="text" value="Player two">
-                    <svg class="svg-name" style="width:3em;height:3em" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M5,3C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19H5V5H12V3H5M17.78,4C17.61,4 17.43,4.07 17.3,4.2L16.08,5.41L18.58,7.91L19.8,6.7C20.06,6.44 20.06,6 19.8,5.75L18.25,4.2C18.12,4.07 17.95,4 17.78,4M15.37,6.12L8,13.5V16H10.5L17.87,8.62L15.37,6.12Z" />
-                    </svg>
-                </div>
-                <div class="select-icon">
-                    <svg style="width:4rem;height:4rem" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-                    </svg>
-                    <div class="show-icons"></div>
-                    <svg style="width:4rem;height:4rem" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <button type="button">Start</button>
-    </div>
-    -->
 </body>
 </html>
