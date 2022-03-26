@@ -1,6 +1,7 @@
 const gb = document.getElementById("gameboard");
 const playAgain = document.getElementById("again");
 const restart = document.getElementById("restart");
+const players = document.querySelectorAll(".name svg");
 
 
 
@@ -110,8 +111,14 @@ const displayController = (() => {
 
 
 
-const player = (name, icon) => {
-    
+const player = (playerName, name) => {
+    const newName = () => {
+        
+    }
+
+    return{
+        newName,
+    }
 };
 
 
@@ -121,7 +128,14 @@ const player = (name, icon) => {
 gameboard.create(gb);
 playAgain.addEventListener("click", displayController.newGame);
 restart.addEventListener("click", displayController.restartScores);
+players.forEach( player => player.addEventListener("click", changeName));
+
 
 function disp(){
     displayController.displaySymbol(this);
+}
+
+function changeName(){
+    let name = prompt("New name");
+    this.parentNode.lastElementChild.textContent = name;
 }
