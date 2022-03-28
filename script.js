@@ -35,6 +35,9 @@ const displayController = (() => {
     const counterX = document.getElementById("mark-x");
     const counterO = document.getElementById("mark-o");
     const playAgain = document.getElementById("again");
+    const congratulate = document.getElementById("congratulate");
+    const playerOne = document.querySelector("#player-one .name");
+    const playerTwo = document.querySelector("#player-two .name")
 
     const displaySymbol = (square) => {
         let num = square.dataset.num;
@@ -46,8 +49,13 @@ const displayController = (() => {
         currentSymbol = currentSymbol === "X" ? "O" : "X";
         symbolsCounter++;
         
+        
+
         if(symbolsCounter > 4){
             checkWinner();
+        }else{
+            playerOne.classList.toggle("my-turn");
+            playerTwo.classList.toggle("my-turn");
         }
     }
 
@@ -72,19 +80,24 @@ const displayController = (() => {
         if(regex.test(strX)){
             counterX.textContent++;
             winner = true;
+            congratulate.textContent = `Congratulations ${counterX.parentNode.firstElementChild.lastElementChild.textContent}!`;
             playAgain.style.display = "flex";
         }else if(regex.test(strO)){
             counterO.textContent++;
             winner = true;
+            congratulate.textContent = `Congratulations ${counterO.parentNode.firstElementChild.lastElementChild.textContent}!`;
             playAgain.style.display = "flex";
         }else if(arrO.length + arrX.length == 9){
+            congratulate.textContent = "Tie :("
             playAgain.style.display = "flex";
+        }else{
+            playerOne.classList.toggle("my-turn");
+            playerTwo.classList.toggle("my-turn");
         }
         //console.log(strO,strX,regex);
     }
 
     const newGame = () => {
-        console.log("something");
         playAgain.style.display = "none";
         game = [,,,,,,,,,];
         symbolsCounter = 0;
@@ -92,6 +105,8 @@ const displayController = (() => {
         gameboard.childNodes.forEach(div => {
             div.textContent = "";
         });
+        playerOne.classList.toggle("my-turn");
+        playerTwo.classList.toggle("my-turn");
     }
 
     const restartScores = () => {
@@ -137,5 +152,6 @@ function disp(){
 
 function changeName(){
     let name = prompt("New name");
+    if(!name) return;
     this.parentNode.lastElementChild.textContent = name;
 }

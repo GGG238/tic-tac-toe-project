@@ -53,10 +53,16 @@ body{
 
 .name{
     display: flex;
+    padding: 0.1rem;
+    border-radius: 0.4rem;
 }
 
 .name svg{
     cursor: pointer;
+}
+
+.my-turn{
+    box-shadow: 0 0 1rem white;
 }
 
 /*---------- Gameboard ----------*/
@@ -110,6 +116,7 @@ body{
     cursor: pointer;
     grid-area: 1/1/2/2;
     border-radius: 10%;
+    text-align: center;
 }
 
 /*---------- Options ----------*/
