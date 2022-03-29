@@ -94,10 +94,9 @@ const displayController = (() => {
             playerOne.classList.toggle("my-turn");
             playerTwo.classList.toggle("my-turn");
         }
-        //console.log(strO,strX,regex);
     }
 
-    const newGame = () => {
+    const newGame = a => {
         playAgain.style.display = "none";
         game = [,,,,,,,,,];
         symbolsCounter = 0;
@@ -105,12 +104,13 @@ const displayController = (() => {
         gameboard.childNodes.forEach(div => {
             div.textContent = "";
         });
+        if(a==="a") return;
         playerOne.classList.toggle("my-turn");
         playerTwo.classList.toggle("my-turn");
     }
 
     const restartScores = () => {
-        newGame();
+        newGame("a");
         counterO.textContent = 0;
         counterX.textContent = 0;
     }
@@ -121,20 +121,6 @@ const displayController = (() => {
         restartScores,
     }
 })();
-
-
-
-
-
-const player = (playerName, name) => {
-    const newName = () => {
-        
-    }
-
-    return{
-        newName,
-    }
-};
 
 
 
